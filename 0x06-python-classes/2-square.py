@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+# 0-square.py by Chukwuemeka
+"""A module that defines a square """
+
+
 class Square:
     """A class that represents a square"""
 
@@ -11,10 +15,8 @@ class Square:
             ValueError: if size is less than zero
         """
 
-        try:
-          assert isinstance(size, int)
-        except:
-          raise TypeError('size must be an integer')
+        if not isinstance(size, int):
+            raise TypeError('size must be an integer')
         if size < 0:
             raise ValueError('size must be >= 0')
 
