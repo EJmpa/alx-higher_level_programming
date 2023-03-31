@@ -1,11 +1,8 @@
 #!/usr/bin/python3
+# 0-square.py by Chukwu
+"""Defines a square """
 
-#Empty Square class by @EJmpa
-
-"""An empty Square class"""
 
 class Square:
-
-    """Empty class that defines a square"""
-
+    """Empty class that does nothing"""
     pass
