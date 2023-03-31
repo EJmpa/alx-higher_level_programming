@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+# 0-square.py by Chukwu
+"""A module that defines a square """
+
+
 class Square:
     """A class that represents a square"""
 
@@ -43,7 +47,8 @@ class Square:
     def my_print(self):
         """print the square in # """
 
-        for i in range(self.__size):
-          if self.__size == 0:
+        if self.__size == 0:
             print()
-          print("#" * self.__size)
+
+        for i in range(self.__size):
+            print("#" * self.__size)
