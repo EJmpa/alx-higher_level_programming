@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+# 0-square.py by Chukwu
+"""A module that defines a square """
+
+
 class Square:
     """A class that represents a square"""
 
@@ -24,4 +28,4 @@ class Square:
         Returns: The square of the size
         """
 
-        return (self.__size * self.__size)
+        return (self.__size ** 2)
