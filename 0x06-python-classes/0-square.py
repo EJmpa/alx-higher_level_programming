@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-# Empty Square class by @EJmpa
+#Empty Square class by @EJmpa
 
 """An empty Square class"""
 
