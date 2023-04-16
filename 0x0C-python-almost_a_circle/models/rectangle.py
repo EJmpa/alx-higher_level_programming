@@ -1,26 +1,5 @@
 #!/usr/bin/python3
 
-"""This module stores a class named `'Base'`"""
-
-class Base:
-    """A Python class - 'Base' for evaluation"""
-
-    __nb_objects = 0
-
-    def __init__(self, id=None):
-        """An dunder method(__init__()) for
-        initializing `'Base'` class arguments
-        """
-
-        if id != None:
-            self.id = id
-        else:
-            Base.__nb_objects += 1
-            self.id = Base.__nb_objects
-
-            
-#!/usr/bin/python3
-
 #Importation of `Base` class from `'models/base.py'
 from models.base import Base
 
@@ -110,7 +89,11 @@ class Rectangle(Base):
         """A function that prints in stdout the `'Rectangle'`
         instance with the character '#'
         """
+        for y in range(self.y):
+            print("")
         for h in range(self.__height):
+            for x in range(self.x):
+                print(" ", end="")
             for w in range(self.__width):
                 print ("#", end="")
             print()
