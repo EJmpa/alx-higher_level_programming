@@ -38,26 +38,45 @@ class Rectangle(Base):
     def y(self):
         """Gets/Returns the value of y"""
         return self.__y
+
     
     @width.setter
     def width(self, value):
         """Sets the value of width"""
+        if (type(value) != int):
+            raise TypeError(f"width must be an integer")
+        if value <= 0:
+            raise ValueError("width must be > 0")
+
         self.__width = value
 
 
     @height.setter
     def height(self, value):
         """Sets the value of height"""
+        if (type(value) != int):
+            raise TypeError(f"height must be an integer")
+        if value <= 0:
+            raise ValueError("height must be > 0")
+
         self.__height = value
         
     @x.setter
     def x(self, value):
         """Sets the value of x"""
+        if (type(value) != int):
+            raise TypeError(f"x must be an integer")
+        if value < 0:
+            raise ValueError("x must be >= 0")
+
         self.__x = value
         
     @y.setter
     def x(self, value):
         """Sets the value of y"""
+        if (type(value) != int):
+            raise TypeError(f"y must be an integer")
+        if value < 0:
+            raise ValueError("y must be >= 0")
+
         self.__y = value
-        
-        
