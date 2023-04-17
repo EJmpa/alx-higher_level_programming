@@ -109,7 +109,7 @@ class Rectangle(Base):
         """
         if args and len(args) != 0:
             i = 0
-            for arg in ls:
+            for arg in args:
                 if i == 0:
                     if len(ls) == 0:
                         self.__init__(self.width, self.height, self.x, self.y)
