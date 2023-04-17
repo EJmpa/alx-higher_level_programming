@@ -26,9 +26,9 @@ class Square(Rectangle):
     def size(self, value):
         """Sets the value for size"""
         if type(value) is not int:
-            raise TypeError("size must be an integer")
+            raise TypeError("width must be an integer")
         if value <= 0:
-            raise ValueError("size must be > 0")
+            raise ValueError("width must be > 0")
         self.__size = value
         
     def update(self, *args, **kwargs):
@@ -46,7 +46,7 @@ class Square(Rectangle):
                 if i == 3:
                     self.y = value
                 i += 1
-
+                
         elif (kwargs is not None) and len(kwargs) != 0:
             for key, value in kwargs.items():
                 if key == "id":
@@ -57,3 +57,16 @@ class Square(Rectangle):
                     self.x = value
                 if key == "y":
                     self.y = value
+
+    def to_dictionary(self):
+            """
+            Returns the dictionary representation of a `'Square'`
+            class attributes
+            """
+            d = {
+                'id': self.id,
+                "size": self.size,
+                "x": self.x,
+                "y": self.y
+            }
+            return d
