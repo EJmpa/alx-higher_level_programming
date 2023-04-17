@@ -1,5 +1,3 @@
-#!/usr/bin/python3
-
 """A Module that of a class `'Sqaure'` that inherits `'Rectangle'` class"""
 
 from models.rectangle import Rectangle
@@ -32,3 +30,30 @@ class Square(Rectangle):
         if value <= 0:
             raise ValueError("size must be > 0")
         self.__size = value
+        
+    def update(self, *args, **kwargs):
+        """A method that updates attributes by assigning
+        an argument to each of them
+        """
+        if (args is not None) and len(args) != 0:
+            for i, value in enumerate(args):
+                if i == 0:
+                    self.id = value
+                if i == 1:
+                    self.size = value
+                if i == 2:
+                    self.x = value
+                if i == 3:
+                    self.y = value
+                i += 1
+
+        elif (kwargs is not None) and len(kwargs) != 0:
+            for key, value in kwargs.items():
+                if key == "id":
+                    self.id = value
+                if key == "size":
+                    self.size = value
+                if key == "x":
+                    self.x = value
+                if key == "y":
+                    self.y = value
