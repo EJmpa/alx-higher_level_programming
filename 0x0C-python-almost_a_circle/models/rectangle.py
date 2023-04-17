@@ -103,24 +103,40 @@ class Rectangle(Base):
         return f"[{self.__class__.__name__}] ({self.id}) {self.__x}/{self.__y} - \
 {self.__width}/{self.__height}"
     
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """A method that updates attributes by assigning
         an argument to each of them
         """
-        ls =[arg for arg in args]
-        i = 0
-        for arg in ls:
-            if i == 0:
-                if len(ls) == 0:
-                    self.__init__(self.width, self.height, self.x, self.y)
-                else:
-                    self.id = arg
-            elif i == 1:
-                self.width = arg
-            elif i == 2:
-                self.height = arg
-            elif i == 3:
-                self.x = arg
-            elif i == 4:
-                self.y = arg
-            i += 1
+        if args and len(args) != 0:
+            i = 0
+            for arg in ls:
+                if i == 0:
+                    if len(ls) == 0:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = arg
+                elif i == 1:
+                    self.width = arg
+                elif i == 2:
+                    self.height = arg
+                elif i == 3:
+                    self.x = arg
+                elif i == 4:
+                    self.y = arg
+                i += 1
+            
+        elif (kwargs) and len(kwargs) != 0:
+            for key, value in kwargs.items():
+                if key == "id":
+                    if value is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = value
+                elif key == "width":
+                    self.width = value
+                elif key == "height":
+                    self.height = value
+                elif key == "x":
+                    self.x = value
+                elif key == "y":
+                    self.y = value
