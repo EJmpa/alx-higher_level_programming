@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import json
 import os
+import csv
 
 """This module stores a class named `'Base'`"""
 
@@ -69,3 +70,31 @@ class Base:
             with open(cls.__name__ + '.json', 'r', encoding='utf-8') as f:
                 list_dicts = cls.from_json_string(f.read())
             return [cls.create(**dic) for dic in list_dicts]
+        
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        filename = cls.__name__ + ".csv"
+        with open(filename, mode='w', newline='') as file:
+            writer = csv.writer(file)
+            for obj in list_objs:
+                if cls.__name__ == "Rectangle":
+                    writer.writerow([obj.id, obj.width, obj.height, obj.x, obj.y])
+                elif cls.__name__ == "Square":
+                    writer.writerow([obj.id, obj.size, obj.x, obj.y])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        filename = cls.__name__ + ".csv"
+        try:
+            with open(filename, mode='r') as file:
+                reader = csv.reader(file)
+                objs = []
+                for row in reader:
+                    if cls.__name__ == "Rectangle":
+                        obj = cls(int(row[1]), int(row[2]), int(row[3]), int(row[4]), int(row[0]))
+                    elif cls.__name__ == "Square":
+                        obj = cls(int(row[1]), int(row[2]), int(row[3]), int(row[0]))
+                    objs.append(obj)
+                return objs
+        except FileNotFoundError:
+            return []
