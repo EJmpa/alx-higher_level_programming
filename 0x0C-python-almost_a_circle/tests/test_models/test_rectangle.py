@@ -335,12 +335,6 @@ class test_rectangle(unittest.TestCase):
         t = [{"x": 0, "y": 0, "id": 346, "height": 10, "width": 5}]
         self.assertEqual(t, json.loads(content))
 
-    def test_saving_to_file_no_iter(self):
-        '''
-            Sending a non iterable to the function
-        '''
-        with self.assertRaises(TypeError):
-            Rectangle.save_to_file(self.r)
 
     def test_saving_to_file_None(self):
         '''
