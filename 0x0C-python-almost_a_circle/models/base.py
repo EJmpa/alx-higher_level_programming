@@ -1,9 +1,9 @@
 #!/usr/bin/python3
+"""This module stores a class named `'Base'`"""
+
 import json
 import os
 import csv
-
-"""This module stores a class named `'Base'`"""
 
 
 class Base:
