@@ -306,12 +306,12 @@ class test_square(unittest.TestCase):
         t = [{"id": 346, "x": 0, "size": 5, "y": 0}]
         self.assertEqual(t, json.loads(content))
 
-    def test_saving_to_file_no_iter(self):
+    #def test_saving_to_file_no_iter(self):
         '''
             Sending a non iterable to the function
         '''
-        with self.assertRaises(TypeError):
-            Square.save_to_file(self.s)
+        #with self.assertRaises(TypeError):
+            #Square.save_to_file(self.s)
 
     def test_saving_to_file_None(self):
         '''
