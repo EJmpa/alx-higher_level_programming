@@ -1,14 +1,16 @@
 #!/usr/bin/python3
+"""A `'Rectangle'` subclass"""
 
-#Importation of `Base` class from `'models/base.py'
+# Importation of `Base` class from `'models/base.py'
 
 from models.base import Base
+
 
 class Rectangle(Base):
     """class `'Rectangle'` that inherits
     'Base' class features
     """
-    
+
     def __init__(self, width, height, x=0, y=0, id=None):
         """`Rectangle` class initialzation"""
         super().__init__(id)
@@ -16,31 +18,30 @@ class Rectangle(Base):
         self.height = height
         self.x = x
         self.y = y
-        
-    
-    #Assign easch private instance attributes with its own public getter and setter:
-    
+
+    # Assign easch private instance attributes
+    # with its own public getter and setter:
+
     @property
     def width(self):
         """Gets/Returns the value of width"""
         return self.__width
-    
+
     @property
     def height(self):
         """Gets/Returns the value of height"""
         return self.__height
-    
+
     @property
     def x(self):
         """Gets/Returns the value of x"""
         return self.__x
-    
+
     @property
     def y(self):
         """Gets/Returns the value of y"""
         return self.__y
 
-    
     @width.setter
     def width(self, value):
         """Sets the value of width"""
@@ -51,7 +52,6 @@ class Rectangle(Base):
 
         self.__width = value
 
-
     @height.setter
     def height(self, value):
         """Sets the value of height"""
@@ -61,7 +61,7 @@ class Rectangle(Base):
             raise ValueError("height must be > 0")
 
         self.__height = value
-        
+
     @x.setter
     def x(self, value):
         """Sets the value of x"""
@@ -71,7 +71,7 @@ class Rectangle(Base):
             raise ValueError("x must be >= 0")
 
         self.__x = value
-        
+
     @y.setter
     def y(self, value):
         """Sets the value of y"""
@@ -81,11 +81,11 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
 
         self.__y = value
-        
+
     def area(self):
         """Returns the area value of the `'Rectangle'` instance"""
         return (self.__width * self.__height)
-    
+
     def display(self):
         """A function that prints in stdout the `'Rectangle'`
         instance with the character '#'
@@ -96,14 +96,14 @@ class Rectangle(Base):
             for x in range(self.x):
                 print(" ", end="")
             for w in range(self.__width):
-                print ("#", end="")
+                print("#", end="")
             print()
-            
+
     def __str__(self):
         """Returns '[Rectangle] (<id>) <x>/<y> - <width>/<height>'"""
-        return f"[{self.__class__.__name__}] ({self.id}) {self.__x}/{self.__y} - \
-{self.__width}/{self.__height}"
-    
+        return f"[{self.__class__.__name__}] ({self.id}) \
+{self.__x}/{self.__y} - {self.__width}/{self.__height}"
+
     def update(self, *args, **kwargs):
         """Assigns an argument to each attribute"""
 
@@ -141,8 +141,6 @@ class Rectangle(Base):
                 elif k == "y":
                     self.y = v
 
-
-        
     def to_dictionary(self):
         """
         Returns the dictionary representation of a `'Rectangle'`
