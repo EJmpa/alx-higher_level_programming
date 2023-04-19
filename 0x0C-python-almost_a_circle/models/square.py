@@ -36,17 +36,17 @@ class Square(Rectangle):
         """A method that updates attributes by assigning
         an argument to each of them
         """
-        if (args is not None) and len(args) != 0:
-            for i, value in enumerate(args):
-                if i == 0:
-                    self.id = value
-                if i == 1:
-                    self.size = value
-                if i == 2:
-                    self.x = value
-                if i == 3:
-                    self.y = value
-                i += 1
+        if args is not None and len(args) != 0:
+            if len(args) >= 1:
+                if type(args[0]) != int and args[0] is not None:
+                    raise TypeError("id must be an integer")
+                self.id = args[0]
+            if len(args) > 1:
+                self.size = args[1]
+            if len(args) > 2:
+                self.x = args[2]
+            if len(args) > 3:
+                self.y = args[3]
                 
         elif (kwargs is not None) and len(kwargs) != 0:
             for key, value in kwargs.items():
