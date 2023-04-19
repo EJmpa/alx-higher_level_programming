@@ -8,6 +8,7 @@ from io import StringIO
 """tests square"""
 
 
+
 class TestSquare(unittest.TestCase):
 
     def test_docstrings(self):
