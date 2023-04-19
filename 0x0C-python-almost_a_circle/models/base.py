@@ -73,6 +73,7 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
+        """Save files to csv"""
         filename = cls.__name__ + ".csv"
         with open(filename, "w", newline="") as csvfile:
             if list_objs is None or list_objs == []:
@@ -88,6 +89,7 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
+        """Load files from csv"""
         filename = cls.__name__ + ".csv"
         try:
             with open(filename, mode='r') as file:
