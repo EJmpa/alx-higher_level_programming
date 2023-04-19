@@ -48,7 +48,7 @@ class Square(Rectangle):
             if len(args) > 3:
                 self.y = args[3]
                 
-        elif (kwargs is not None) and len(kwargs) != 0:
+       else:
             for key, value in kwargs.items():
                 if key == "id":
                     if type(value) != int and value is not None:
