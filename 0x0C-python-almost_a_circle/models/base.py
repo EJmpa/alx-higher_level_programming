@@ -48,7 +48,8 @@ class Base:
                 raise TypeError("json_string must be a string")
             return json.loads(json_string)
         
-        return list()
+        else:
+            return list()
     
     @classmethod
     def create(cls, **dictionary):
