@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""A pythobn class named `'Student'`"""
+
 
 class Student:
     """Defines a student by first name, last name, and age."""
