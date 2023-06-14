@@ -1,0 +1,25 @@
+import mysql.connector
+
+# Establish a connection to the MySQL server
+conn = mysql.connector.connect(
+    host="your_host",
+    user="your_username",
+    password="your_password"
+)
+
+# Create a cursor object
+cursor = conn.cursor()
+
+# Execute the SHOW DATABASES statement
+cursor.execute("SHOW DATABASES")
+
+# Fetch all databases
+databases = cursor.fetchall()
+
+# Print the databases
+for db in databases:
+    print(db[0])
+
+# Close the cursor and connection
+cursor.close()
+conn.close()
