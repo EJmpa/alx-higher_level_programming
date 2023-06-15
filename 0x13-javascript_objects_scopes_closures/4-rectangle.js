@@ -3,16 +3,14 @@
  * Check the parameters provided
  */
 class Rectangle {
-  constructor(w, h) {
-    if (w <= 0 || h <= 0 || !Number.isInteger(w) || !Number.isInteger(h)) {
-      return {}; // Return an empty object if the conditions are not met
+  constructor (w, h) {
+    if (typeof w === 'number' && w > 0 && typeof h === 'number' && h > 0) {
+      this.width = w;
+      this.height = h;
     }
-
-    this.width = w;
-    this.height = h;
   }
 
-  print() {
+  print () {
     if (Object.keys(this).length === 0) {
       console.log("Empty object");
       return;
@@ -23,7 +21,7 @@ class Rectangle {
     }
   }
 
-  rotate() {
+  rotate () {
     if (Object.keys(this).length === 0) {
       return; // Return if the object is empty
     }
@@ -31,7 +29,7 @@ class Rectangle {
     [this.width, this.height] = [this.height, this.width];
   }
 
-  double() {
+  double () {
     if (Object.keys(this).length === 0) {
       return; // Return if the object is empty
     }
