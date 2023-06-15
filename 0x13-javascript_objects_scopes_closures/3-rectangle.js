@@ -11,11 +11,6 @@ class Rectangle {
   }
 
   print() {
-    if (Object.keys(this).length === 0) {
-      console.log("Empty object");
-      return;
-    }
-
     for (let i = 0; i < this.height; i++) {
       console.log("X".repeat(this.width));
     }
