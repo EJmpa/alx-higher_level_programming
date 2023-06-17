@@ -6,6 +6,11 @@ database `hbtn_0e_0_usa`.
 import sys
 import MySQLdb
 
+"""
+Access to the database and get the states
+from the database.
+"""
+
 # Read MySQL credentials from command-line arguments
 username = sys.argv[1]
 password = sys.argv[2]
