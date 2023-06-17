@@ -38,7 +38,7 @@ if __name__ == '__main__':
 
     # Execute the SQL query to fetch all states from the states table
     query = "SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC"
-    cursor.execute(query, (state_name,))
+    cursor.execute(query.format(argv[4]))
 
     # Fetch all the rows returned by the query
     rows = cursor.fetchall()
