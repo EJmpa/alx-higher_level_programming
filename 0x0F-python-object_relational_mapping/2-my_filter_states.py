@@ -12,6 +12,9 @@ import MySQLdb
 Access to the database and get the states
 from the database.
 """
+if len(sys.argv) != 5:
+    print("Usage: python script.py [mysql_username] [mysql_password] [database_name] [state_name]")
+    sys.exit(1)
 
 if __name__ == '__main__':
 
