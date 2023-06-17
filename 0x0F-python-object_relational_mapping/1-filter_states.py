@@ -6,12 +6,12 @@ database `hbtn_0e_0_usa`.
 import sys
 import MySQLdb
 
-if __name__ == '__main__':
+"""
+Access to the database and get the states
+from the database.
+"""
 
-    """
-    Access to the database and get the states
-    from the database.
-    """
+if __name__ == '__main__':
 
     # Read MySQL credentials from command-line arguments
     username = sys.argv[1]
@@ -31,7 +31,7 @@ if __name__ == '__main__':
     cursor = db.cursor()
 
     # Execute the SQL query to fetch all states from the states table
-    query = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC"
+    query = "SELECT * FROM states ORDER BY id ASC"
     cursor.execute(query)
 
     # Fetch all the rows returned by the query
