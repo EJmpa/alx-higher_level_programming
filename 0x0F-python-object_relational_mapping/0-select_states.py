@@ -32,7 +32,7 @@ rows = cursor.fetchall()
 
 # Print the states
 for row in rows:
-    print(row[1])
+    print(row)
 
 # Close the cursor and database connection
 cursor.close()
