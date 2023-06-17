@@ -32,8 +32,8 @@ if __name__ == '__main__':
 
     # Execute the SQL query to fetch all states from the states table
     query = "SELECT cities.id, cities.name, states.name \
-                                FROM cities JOIN states ON cities.state_id \
-                                = states.id ORDER BY cities.id ASC")
+    FROM cities JOIN states ON cities.state_id \
+    = states.id ORDER BY cities.id ASC"
 
     cursor.execute(query)
 
