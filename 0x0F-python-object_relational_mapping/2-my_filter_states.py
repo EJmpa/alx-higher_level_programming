@@ -12,9 +12,6 @@ import MySQLdb
 Access to the database and get the states
 from the database.
 """
-if len(sys.argv) != 5:
-    print("Usage: python script.py [mysql_username] [mysql_password] [database_name] [state_name]")
-    sys.exit(1)
 
 if __name__ == '__main__':
 
@@ -37,8 +34,10 @@ if __name__ == '__main__':
     cursor = db.cursor()
 
     # Execute the SQL query to fetch all states from the states table
-    query = "SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC"
-    cursor.execute(query.format(state_name))
+    query = "SELECT * FROM states WHERE name LIKE BINARY \
+    '{}' ORDER BY id ASC".format(state_name)
+
+    cursor.execute(query)
 
     # Fetch all the rows returned by the query
     rows = cursor.fetchall()
