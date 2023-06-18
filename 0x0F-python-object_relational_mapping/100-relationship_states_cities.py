@@ -40,7 +40,6 @@ if __name__ == "__main__":
 
     # Add the State and City objects to the session
     session.add(california)
-    session.add(san_francisco)
 
     # Commit the changes to the database
     session.commit()
