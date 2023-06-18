@@ -9,6 +9,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 
+# Checks if the script is being executed as the main module.
 if __name__ == "__main__":
     # Get the command-line arguments
     username = sys.argv[1]
