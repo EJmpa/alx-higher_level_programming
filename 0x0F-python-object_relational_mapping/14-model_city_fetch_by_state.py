@@ -30,7 +30,7 @@ if __name__ == "__main__":
 
     # Query all City objects
     cities = (
-        session.query(City)
+        session.query(City, State)
         .join(State)
         .order_by(City.id)
         .all()
