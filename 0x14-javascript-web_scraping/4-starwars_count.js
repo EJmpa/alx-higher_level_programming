@@ -1,24 +1,22 @@
 #!/usr/bin/node
 
 const request = require('request');
+const url = process.argv[2];
+const characterId = '18';
+let count = 0;
 
-if (process.argv.length !== 3) {
-  console.error('Usage: ./4-starwars_count.js <API-URL>');
-  process.exit(1);
-}
-
-const apiURL = process.argv[2];
-
-request(apiURL, (error, response, body) => {
+request.get(url, (error, response, body) => {
   if (error) {
-    console.error(error);
+    console.log(error);
   } else {
-    if (response.statusCode === 200) {
-      const films = JSON.parse(body).results;
-      const wedgeAntillesMovies = films.filter(movie => movie.characters.includes('https://swapi-api.alx-tools.com/api/people/18/'));
-      console.log(wedgeAntillesMovies.length);
-    } else {
-      console.error(`Error: Status code ${response.statusCode}`);
-    }
+    const data = JSON.parse(body);
+    data.results.forEach((film) => {
+      film.characters.forEach((character) => {
+        if (character.includes(characterId)) {
+          count += 1;
+        }
+      });
+    });
+    console.log(count);
   }
 });
