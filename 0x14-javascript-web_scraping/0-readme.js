@@ -3,9 +3,9 @@
 const fs = require('fs');
 
 function printFileContent(filePath) {
-  fs.readFile(filePath, 'utf-8', (err, data) => {
-    if (err) {
-      console.error(err);
+  fs.readFile(filePath, 'utf-8', (error, data) => {
+    if (error) {
+      console.log(error);
     } else {
       console.log(data);
     }
